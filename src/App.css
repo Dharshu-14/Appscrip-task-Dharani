@@ -1,0 +1,84 @@
+/* Hero Section - Scaled for high-end feel */
+.hero-section { text-align: center; padding: 40px 15px; border-top: 1px solid var(--border-color); }
+.hero-section h1 { font-size: clamp(24px, 5vw, 40px); font-weight: 500; letter-spacing: 1px; margin-bottom: 15px; }
+.hero-section p { max-width: 600px; margin: 0 auto; color: var(--text-gray); font-size: 14px; line-height: 1.5; }
+
+/* Sticky Filter Bar */
+.toolbar {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 125;
+}
+
+.toolbar .toolbar-left { display: flex; gap: 12px; align-items: center; }
+.product-count { font-weight: 700; color: var(--light-gray); }
+.filter-toggle-btn { background: transparent; border: 1px solid var(--border-color); padding: 8px 12px; cursor: pointer; border-radius: 4px; }
+
+.sort-container { position: relative; }
+.sort-dropdown-btn { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border-color); background: #fff; cursor: pointer; border-radius: 4px; }
+.sort-dropdown-btn .rotate { transform: rotate(180deg); transition: transform 0.2s ease; }
+
+.sort-overlay { position: fixed; inset: 0; z-index: 145; }
+.sort-menu { position: absolute; right: 0; top: calc(100% + 8px); background: #fff; border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 150; border-radius: 6px; overflow: hidden; min-width: 220px; }
+.sort-item { padding: 10px 14px; cursor: pointer; display: flex; gap: 10px; align-items: center; }
+.sort-item.active { background: #f7f7f7; font-weight: 700; }
+
+
+.main-layout {
+  display: flex;
+  gap: 0;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+/* THE GRID: Optimized for iPad, Mobile, and Desktop */
+.products-container { flex: 1; }
+.products-container.full-width { width: 100%; }
+
+.products-grid, .grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 600px) {
+  .products-grid, .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .products-grid, .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-left: 20px;
+  }
+  .products-container.full-width .products-grid,
+  .products-container.full-width .grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 0;
+  }
+}
+
+/* Sidebar backdrop used on mobile when drawer is open */
+.sidebar-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 110; }
+
+/* Ensure app doesn't horizontally scroll */
+.app-container { overflow-x: hidden; width: 100%; }
+
+/* Sidebar wrapper compatibility: map to visible/hidden states if a different wrapper is used elsewhere */
+.sidebar { transition: transform 0.3s ease; }
+.sidebar.visible { transform: translateX(0); }
+
+/* Prevent whole page from horizontal scrolling */
+.app { overflow-x: hidden; width: 100%; }

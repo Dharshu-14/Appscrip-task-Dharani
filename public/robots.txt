@@ -1,0 +1,29 @@
+# robots.txt for Appscrip
+# Allow all robots by default
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /cart
+Disallow: /checkout
+Disallow: /*.json$
+Disallow: /*?sort=
+Disallow: /*?filter=
+
+# Crawl-delay in seconds
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://appscrip.com/sitemap.xml
+Sitemap: https://appscrip.com/sitemap-products.xml
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific directives
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

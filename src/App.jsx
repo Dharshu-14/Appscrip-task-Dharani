@@ -4,6 +4,7 @@ import FilterSidebar from './components/FilterSidebar';
 import { FILTER_CATEGORIES } from './constants/mockData';
 import ProductCard from './components/ProductCard';
 import Footer from './components/Footer';
+import SEOHead from './components/SEOHead';
 import { ChevronLeft, ChevronRight, ChevronDown, Check } from 'lucide-react';
 import './App.css';
 
@@ -141,6 +142,18 @@ function App() {
 
   return (
     <div className="app-container">
+      <SEOHead 
+        title="Appscrip - Shop Fashion & Clothing | Premium Quality Online Store"
+        description="Discover premium fashion and clothing at Appscrip. Shop exclusive designs, high-quality apparel, and accessories. Free shipping on orders over $50. Timeless elegance meets modern style."
+        keywords="fashion, clothing, apparel, online shopping, designer wear, premium quality, fashion store"
+        canonical="https://appscrip.com/"
+        og={{
+          type: 'website',
+          url: 'https://appscrip.com/',
+          image: 'https://appscrip.com/og-image.jpg',
+          site_name: 'Appscrip',
+        }}
+      />
       <Header />
       
       <main className="container">
